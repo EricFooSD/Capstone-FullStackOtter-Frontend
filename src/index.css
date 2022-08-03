@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: "Public Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 255, 255);
+}
+
+#page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+#dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
