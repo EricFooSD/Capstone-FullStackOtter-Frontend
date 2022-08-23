@@ -16,9 +16,9 @@ import {
   Avatar,
   Typography,
 } from '@mui/material';
-import SearchBar from '../components/SearchBar.jsx';
+import SearchBar from '../components/SearchPage/SearchBar.jsx';
 import BACKEND_URL from '../supportFunctions.js';
-import ProfileModalForSearch from '../components/ProfileModalForSearch.jsx';
+import ProfileModalForSearch from '../components/SearchPage/ProfileModalForSearch.jsx';
 
 // ----------------------------------------------------------------------
 
