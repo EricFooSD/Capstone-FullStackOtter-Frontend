@@ -6,12 +6,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { grey, blueGrey, green } from '@mui/material/colors';
 import store from './redux/store.js';
-import Home from './Pages/Home.jsx';
-import Search from './Pages/Search.jsx';
-import Login from './Pages/Login.jsx';
-import Dashboard from './Pages/Dashboard.jsx';
-import Profile from './Pages/Profile.jsx';
-import ProfileEdit from './Pages/ProfileEdit.jsx';
+import Home from './pages/Home.jsx';
+import Search from './pages/Search.jsx';
+import Login from './pages/Login.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import Profile from './pages/Profile.jsx';
+import ProfileEdit from './pages/ProfileEdit.jsx';
 import { UserContext } from './components/UserContext.jsx';
 import BACKEND_URL from './supportFunctions.js';
 
