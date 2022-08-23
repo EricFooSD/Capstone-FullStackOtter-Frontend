@@ -14,8 +14,8 @@ import {
 } from '@mui/material';
 import Board from 'react-trello';
 import axios from 'axios';
-import Iconify from './Iconify.jsx';
-import BACKEND_URL from '../supportFunctions.js';
+import Iconify from '../../SupportComponents/Iconify.jsx';
+import BACKEND_URL from '../../../supportFunctions.js';
 
 const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 

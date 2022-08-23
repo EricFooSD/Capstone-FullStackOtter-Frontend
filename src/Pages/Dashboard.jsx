@@ -17,15 +17,14 @@ import {
 import MuiAlert from '@mui/material/Alert';
 
 import axios from 'axios';
-// import Page from '../components/Page.jsx';
 import BACKEND_URL from '../supportFunctions.js';
 import { UserContext } from '../components/UserContext.jsx';
-import ProjectSubmitFormButton from '../components/ProjectSubmitFormButton.jsx';
-import LinearIndeterminate from '../components/LinearIndeterminate.jsx';
-import DashboardTable from '../components/DashboardTable.jsx';
-import DashboardWidgetSummary from '../components/DashboardWidgetSummary.jsx';
-import DashboardPieChart from '../components/DashboardPieChart.jsx';
-import DashboardBarChart from '../components/DashboardBarChart.jsx';
+import ProjectSubmitFormButton from '../components/DashboardPage/ProjectSubmitFormButton.jsx';
+import LinearIndeterminate from '../components/SupportComponents/LinearIndeterminate.jsx';
+import DashboardTable from '../components/DashboardPage/DashboardTable.jsx';
+import DashboardWidgetSummary from '../components/DashboardPage/DashboardWidgetSummary.jsx';
+import DashboardPieChart from '../components/DashboardPage/DashboardPieChart.jsx';
+import DashboardBarChart from '../components/DashboardPage/DashboardBarChart.jsx';
 
 // .......... HELPER FUNCTIONS .................
 const getSkillsData = (data) => {

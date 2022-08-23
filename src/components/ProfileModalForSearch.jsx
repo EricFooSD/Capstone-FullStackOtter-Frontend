@@ -17,7 +17,7 @@ import {
   Button,
   Grid,
 } from '@mui/material';
-import Iconify from './Iconify.jsx';
+import Iconify from './SupportComponents/Iconify.jsx';
 
 export default function ProfileModalForSearch({ user }) {
   const [open, setOpen] = useState(false);

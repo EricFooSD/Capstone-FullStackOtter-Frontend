@@ -6,12 +6,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import ReactApexChart from 'react-apexcharts';
-// @mui
-import { useTheme, styled } from '@mui/material/styles';
-import { Card, CardHeader } from '@mui/material';
-// components
+import {
+  useTheme, styled, Card, CardHeader,
+} from '@mui/material';
 import { BaseOptionChart } from './BaseOptionChart.jsx';
-// ----------------------------------------------------------------------
 
 const CHART_HEIGHT = 207;
 const LEGEND_HEIGHT = 40;
@@ -31,8 +29,6 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
     top: `calc(${CHART_HEIGHT - LEGEND_HEIGHT}px) !important`,
   },
 }));
-
-// ----------------------------------------------------------------------
 
 DashboardPieChart.propTypes = {
   title: PropTypes.string,

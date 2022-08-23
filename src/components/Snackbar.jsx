@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { forwardRef, useState } from 'react';
 import Stack from '@mui/material/Stack';
 // import Button from '@mui/material/Button';

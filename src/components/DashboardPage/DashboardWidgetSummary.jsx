@@ -5,10 +5,10 @@
 // @mui
 import React from 'react';
 import PropTypes from 'prop-types';
-import { alpha, styled } from '@mui/material/styles';
-import { Card, Typography } from '@mui/material';
-// components
-import Iconify from './Iconify.jsx';
+import {
+  alpha, styled, Card, Typography,
+} from '@mui/material';
+import Iconify from '../SupportComponents/Iconify.jsx';
 
 // ----------------------------------------------------------------------
 

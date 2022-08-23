@@ -4,14 +4,13 @@ import React, {
   useRef, useState, useContext,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import {
   Menu, MenuItem, IconButton, ListItemIcon, ListItemText,
 } from '@mui/material';
 import axios from 'axios';
-import Iconify from './Iconify.jsx';
-import { UserContext } from './UserContext.jsx';
-import BACKEND_URL from '../supportFunctions.js';
+import Iconify from '../SupportComponents/Iconify.jsx';
+import { UserContext } from '../UserContext.jsx';
+import BACKEND_URL from '../../supportFunctions.js';
 
 export default function UserMoreMenu({ rowContent, setJustSubmitted }) {
   const { user } = useContext(UserContext);

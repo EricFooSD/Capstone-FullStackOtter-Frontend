@@ -6,13 +6,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import ReactApexChart from 'react-apexcharts';
-// @mui
 import { Box, Card, CardHeader } from '@mui/material';
-// components
 import { BaseOptionChart } from './BaseOptionChart.jsx';
 
-// ----------------------------------------------------------------------
-
+// .... Chart Settings .... //
 DashboardBarChart.propTypes = {
   title: PropTypes.string,
   subheader: PropTypes.string,

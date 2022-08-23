@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -14,24 +15,25 @@ import {
   Typography,
   Select,
   MenuItem,
+  styled,
 } from '@mui/material';
 
 import MuiInput from '@mui/material/Input';
+
 import CodeIcon from '@mui/icons-material/Code';
-import { styled } from '@mui/material/styles';
 
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { useNavigate } from 'react-router-dom';
-import BACKEND_URL from '../supportFunctions.js';
+import BACKEND_URL from '../../supportFunctions.js';
 
 const Input = styled(MuiInput)`
   width: 42px;
 `;
 
-export default function ReactHookForm({ setOpen, setJustSubmitted }) {
+export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
   const { control, handleSubmit } = useForm({
     reValidateMode: 'onBlur',
   });

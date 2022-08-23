@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
@@ -13,7 +14,7 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 
-import ReactHookForm from './ReactHookForm.jsx';
+import NewProjectHookForm from './NewProjectHookForm.jsx';
 
 export default function ProjectSubmitFormButton({ setJustSubmitted }) {
   const [open, setOpen] = useState(false);
@@ -60,7 +61,7 @@ export default function ProjectSubmitFormButton({ setJustSubmitted }) {
         <DialogTitle>Submit New Project</DialogTitle>
         <Divider />
         <DialogContent>
-          <ReactHookForm setOpen={setOpen} setJustSubmitted={setJustSubmitted} />
+          <NewProjectHookForm setOpen={setOpen} setJustSubmitted={setJustSubmitted} />
         </DialogContent>
         <DialogActions>
           <Button color="error" onClick={handleClose}>Close & Cancel</Button>

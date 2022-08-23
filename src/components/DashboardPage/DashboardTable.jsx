@@ -18,8 +18,7 @@ import {
 } from '@mui/material';
 import SingleProjectModal from './SingleProjectModal.jsx';
 
-// SETTING TABLE HEADERS ----------------------------------------------------------------------
-
+// .... Setting Chart Headers .... //
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', minWidth: 300 },
   { id: 'stage', label: 'Stage', minWidth: 100 },

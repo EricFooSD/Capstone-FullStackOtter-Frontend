@@ -20,7 +20,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { UserContext } from '../components/UserContext.jsx';
 import BACKEND_URL from '../supportFunctions.js';
-import Iconify from '../components/Iconify.jsx';
+import Iconify from '../components/SupportComponents/Iconify.jsx';
 
 const cookies = new Cookies();
 

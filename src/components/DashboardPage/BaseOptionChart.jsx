@@ -1,7 +1,6 @@
 import { alpha, useTheme } from '@mui/material/styles';
 import { GlobalStyles } from '@mui/material';
 import React from 'react';
-// ----------------------------------------------------------------------
 
 export default function BaseOptionChartStyle() {
   const theme = useTheme();
@@ -63,6 +62,7 @@ export default function BaseOptionChartStyle() {
 export function BaseOptionChart() {
   const theme = useTheme();
 
+  // .... Chart Settings .... //
   const LABEL_TOTAL = {
     show: true,
     label: 'Total',

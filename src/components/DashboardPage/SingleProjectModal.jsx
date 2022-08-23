@@ -24,14 +24,13 @@ import {
   ListItemText,
 } from '@mui/material';
 
-import BACKEND_URL from '../supportFunctions.js';
-import Iconify from './Iconify.jsx';
-import { UserContext } from './UserContext.jsx';
-
-import CircularIndeterminate from './CircularIndeterminate.jsx';
+import BACKEND_URL from '../../supportFunctions.js';
+import Iconify from '../SupportComponents/Iconify.jsx';
+import { UserContext } from '../UserContext.jsx';
+import CircularIndeterminate from '../SupportComponents/CircularIndeterminate.jsx';
 import UserMoreMenu from './UserMoreMenu.jsx';
 import HorizontalStepper from './HorizontalStepper.jsx';
-import SingleProjectKanbanModal from './SingleProjectKanbanModal.jsx';
+import SingleProjectKanbanModal from './KanbanBoard/SingleProjectKanbanModal.jsx';
 
 export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
   const { user } = useContext(UserContext);

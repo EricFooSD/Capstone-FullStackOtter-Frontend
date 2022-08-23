@@ -2,15 +2,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useContext } from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
+import {
+  Box, Stepper, Step, StepLabel, Button,
+} from '@mui/material';
 import axios from 'axios';
-import { UserContext } from './UserContext.jsx';
-
-import BACKEND_URL from '../supportFunctions.js';
+import { UserContext } from '../UserContext.jsx';
+import BACKEND_URL from '../../supportFunctions.js';
 
 const steps = ['contracting', 'sourcing', 'in-progress', 'client-review', 'payment-pending', 'completed'];
 
