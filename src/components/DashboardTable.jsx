@@ -21,12 +21,12 @@ import SingleProjectModal from './SingleProjectModal.jsx';
 // SETTING TABLE HEADERS ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', width: 120 },
+  { id: 'name', label: 'Name', minWidth: 300 },
   { id: 'stage', label: 'Stage', minWidth: 100 },
   { id: 'enrollment', label: 'Enrollment', minWidth: 100 },
   { id: 'enrollmentDeadline', label: 'Enrollment Deadline', minWidth: 100 },
   { id: 'deliveryDeadline', label: 'Delivery Deadline', minWidth: 100 },
-  { id: 'viewProfile', label: '', minWidth: 50 },
+  { id: 'viewProfile', label: '', minWidth: 0 },
 ];
 
 const convertToDate = (date) => {
@@ -98,7 +98,7 @@ export default function DashboardTable({
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ width: column.minWidth, fontWeight: 'bold', whiteSpace: 'nowrap' }}
+                  style={{ minWidth: column.minWidth, fontWeight: 'bold', whiteSpace: 'nowrap' }}
                 >
                   {column.label}
                 </TableCell>
@@ -114,7 +114,7 @@ export default function DashboardTable({
                   </TableCell>
                   <TableCell align="left">
                     <Typography
-                      sx={{ fontWeight: 'bold' }}
+                      sx={{ fontWeight: 'bold', maxWidth: 300 }}
                     >
                       {row.name}
                     </Typography>
