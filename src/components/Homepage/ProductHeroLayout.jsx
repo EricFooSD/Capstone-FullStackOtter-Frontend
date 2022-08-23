@@ -1,10 +1,11 @@
 /* eslint-disable react/require-default-props */
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import {
+  styled,
+  Container,
+  Box,
+} from '@mui/material';
 import ProductHeroArrowdown from './HomeAssets/productHeroArrowDown.png';
 
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
