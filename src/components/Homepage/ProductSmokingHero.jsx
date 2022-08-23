@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import {
+  Button,
+  Container,
+} from '@mui/material';
 import Typography from './Typography.jsx';
 
 function ProductSmokingHero() {
