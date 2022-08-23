@@ -3,24 +3,19 @@ import {
   Link,
   useNavigate,
 } from 'react-router-dom';
-
 import { Nav } from 'react-bootstrap';
 import Cookies from 'universal-cookie';
 import React, { useContext, useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import {
+  AppBar, Box, Toolbar, IconButton, Typography, Menu, Avatar, MenuItem, Divider,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-import MenuItem from '@mui/material/MenuItem';
-import Divider from '@mui/material/Divider';
 import { UserContext } from '../UserContext.jsx';
 
+// to handle cookies for logout function
 const cookies = new Cookies();
 
+// styling Navbar
 const headerNav = {
   textAlign: 'center',
   color: 'primary.main',
@@ -28,13 +23,13 @@ const headerNav = {
 };
 
 export default function ResponsiveAppBar() {
+  // .............STATES...............
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { user } = useContext(UserContext);
   const { setUser } = useContext(UserContext);
 
-  console.log(user);
-
+  // .......... HELPER FUNCTIONS .................
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
