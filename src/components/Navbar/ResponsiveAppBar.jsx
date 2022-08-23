@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
-import { UserContext } from './UserContext.jsx';
+import { UserContext } from '../UserContext.jsx';
 
 const cookies = new Cookies();
 

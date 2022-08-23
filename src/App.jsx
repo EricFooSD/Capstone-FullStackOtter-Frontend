@@ -20,7 +20,7 @@ import Preparation from './components/FakeDocusign/Preparation.jsx';
 import Sign from './components/FakeDocusign/Sign.jsx';
 import View from './components/FakeDocusign/View.jsx';
 import Welcome from './components/FakeDocusign/Welcome.jsx';
-import ResponsiveAppBar from './components/ResponsiveAppBar.jsx';
+import ResponsiveAppBar from './components/Navbar/ResponsiveAppBar.jsx';
 
 // make sure that axios always sends the cookies to the backend server
 axios.defaults.withCredentials = true;
