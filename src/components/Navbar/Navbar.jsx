@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Tabs, Tab, Toolbar, AppBar, Box, Typography,
+  Tabs, Tab, Toolbar, AppBar, Box, Typography, createTheme, ThemeProvider, blueGrey,
 } from '@mui/material';
-import { blueGrey } from '@mui/material/colors';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { UserContext } from '../UserContext.jsx';
 
 // create theme for styling
