@@ -1,8 +1,11 @@
 import * as React from 'react';
 
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import {
+  Box,
+  Grid,
+  Container,
+} from '@mui/material';
+
 import Typography from './Typography.jsx';
 import ProductValues1 from './HomeAssets/productValues1.svg';
 import ProductValues2 from './HomeAssets/productValues2.svg';
