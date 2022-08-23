@@ -53,6 +53,7 @@ export default function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  // .......... COMPONENT .................
   return (
     <AppBar position="static">
       <Toolbar>
