@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import {
+  Box,
+  Grid,
+  Container,
+} from '@mui/material';
 import Button from './Button.jsx';
 import Typography from './Typography.jsx';
 import ProductHowItWorks1 from './HomeAssets/productHowItWorks1.svg';
