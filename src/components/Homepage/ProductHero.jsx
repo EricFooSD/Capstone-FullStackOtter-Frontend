@@ -11,7 +11,7 @@ const backgroundImage = 'https://images.squarespace-cdn.com/content/v1/58f0ecc02
 export default function ProductHero() {
   const { user } = useContext(UserContext);
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <ProductHeroLayout
       sxBackground={{

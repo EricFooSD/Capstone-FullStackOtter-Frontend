@@ -33,7 +33,7 @@ const Background = styled(Box)({
 function ProductHeroLayout(props) {
   const { sxBackground, children } = props;
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <ProductHeroLayoutRoot>
       <Container

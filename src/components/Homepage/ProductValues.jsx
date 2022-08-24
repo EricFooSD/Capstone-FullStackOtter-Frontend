@@ -15,6 +15,7 @@ const item = {
 };
 
 function ProductValues() {
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Box
       component="section"

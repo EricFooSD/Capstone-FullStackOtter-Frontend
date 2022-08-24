@@ -32,7 +32,7 @@ const image = {
 function ProductHowItWorks() {
   const { user } = useContext(UserContext);
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Box
       component="section"

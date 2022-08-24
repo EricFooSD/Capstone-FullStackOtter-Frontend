@@ -5,6 +5,7 @@ import Typography from './Typography.jsx';
 // ===================================================>
 
 function ProductSmokingHero() {
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Container
       component="section"
