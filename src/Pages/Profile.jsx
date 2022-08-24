@@ -1,24 +1,20 @@
 /* eslint-disable max-len */
+
+// =================  IMPORT =========================>
 import React, { useContext } from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Badge from '@mui/material/Badge';
-import TextField from '@mui/material/TextField';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import {
+  Box, Container, Avatar, Badge, TextField, Chip, Typography, Grid, Button,
+} from '@mui/material';
 import HandymanTwoToneIcon from '@mui/icons-material/HandymanTwoTone';
 import WorkTwoToneIcon from '@mui/icons-material/WorkTwoTone';
 import ManageAccountsTwoToneIcon from '@mui/icons-material/ManageAccountsTwoTone';
-import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../components/UserContext.jsx';
+// ===================================================>
 
 export default function Profile() {
   // getting user data from useContext in UserContext
   const { user } = useContext(UserContext);
-  console.log('user', user);
 
   // .......... HELPER FUNCTIONS .................
 
@@ -41,8 +37,7 @@ export default function Profile() {
 
   // run below when user is logged in
   if (user.length !== 0) {
-    //
-    // role and account mapping
+    // role and account mapping for icons
     let accountMapping = {};
     if (user.accountType === 'engineer') {
       accountMapping = { name: 'Software Engineer', icon: HandymanTwoToneIcon, color: 'secondary' };
@@ -53,6 +48,8 @@ export default function Profile() {
     if (user.accountType === 'client') {
       accountMapping = { name: 'Client', icon: WorkTwoToneIcon, color: 'info' };
     }
+
+    // .......... RENDERING COMPONENT .......... //
 
     return (
       <>
@@ -120,7 +117,6 @@ export default function Profile() {
         {/* <Box sx={{ margin: 3 }}> */}
         <Container maxWidth="lg">
           {' '}
-
           <Box
             component="form"
             sx={{
@@ -242,10 +238,8 @@ export default function Profile() {
               Edit Profile
             </Button>
           </Box>
-
         </Container>
       </>
-
     );
   }
 }
