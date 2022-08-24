@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
+
+// =================  IMPORT =========================>
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
+// ===================================================>
 
 export default function SearchBar({ setSearchQuery }) {
   return (

@@ -1,28 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
+
+// =================  IMPORT =========================>
 import React, { useState, useEffect, useRef } from 'react';
 import HandymanTwoToneIcon from '@mui/icons-material/HandymanTwoTone';
 import {
-  IconButton,
-  Box,
-  Container,
-  Avatar,
-  Badge,
-  TextField,
-  Chip,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Button,
-  Grid,
+  IconButton, Box, Container, Avatar, Badge, TextField, Chip, Dialog, DialogActions, DialogContent, DialogTitle, Button, Grid,
 } from '@mui/material';
 import Iconify from '../SupportComponents/Iconify.jsx';
+// ===================================================>
 
 export default function ProfileModalForSearch({ user }) {
+  // .......... STATES ............ //
   const [open, setOpen] = useState(false);
   const [scroll] = useState('paper');
 
+  // .......... HELPER FUNCTIONS ............ //
   const handleClickOpen = () => () => {
     setOpen(true);
   };
@@ -41,6 +34,7 @@ export default function ProfileModalForSearch({ user }) {
       }
     }
   }, [open]);
+
   // role and account mapping
   const accountMapping = {
     name: 'Software Engineer',
