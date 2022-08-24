@@ -1,12 +1,13 @@
 /* eslint-disable consistent-return */
 /* eslint-disable import/no-cycle */
+
+// =================  IMPORT =========================>
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
-// import { UserContext } from '../components/UserContext.jsx';
-
 import mergeAnnotations from '../components/FakeDocusign/MergeAnnotations/MergeAnnotations.js';
+// ===================================================>
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
