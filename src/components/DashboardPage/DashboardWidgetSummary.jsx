@@ -3,15 +3,16 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
 // @mui
+// =================  IMPORT =========================>
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
   alpha, styled, Card, Typography,
 } from '@mui/material';
 import Iconify from '../SupportComponents/Iconify.jsx';
+// ===================================================>
 
-// ----------------------------------------------------------------------
-
+// .... Styling .... //
 const IconWrapperStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   display: 'flex',
@@ -23,8 +24,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   marginBottom: theme.spacing(3),
 }));
 
-// ----------------------------------------------------------------------
-
+// .... Set Prop Types .... //
 DashboardWidgetSummary.propTypes = {
   color: PropTypes.string,
   icon: PropTypes.string,
@@ -36,6 +36,7 @@ DashboardWidgetSummary.propTypes = {
 export default function DashboardWidgetSummary({
   title, total, icon, color = 'primary', sx, ...other
 }) {
+  // .......... COMPONENT .......... //
   return (
     <Card
       sx={{

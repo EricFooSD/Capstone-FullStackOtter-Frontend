@@ -2,6 +2,8 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
+
+// =================  IMPORT =========================>
 import React, { forwardRef, useState } from 'react';
 import {
   Button, ListItemIcon, ListItemText, Tooltip, Dialog, Divider, AppBar, Toolbar, IconButton, Typography, Slide,
@@ -11,6 +13,7 @@ import Board from 'react-trello';
 import axios from 'axios';
 import Iconify from '../../SupportComponents/Iconify.jsx';
 import BACKEND_URL from '../../../supportFunctions.js';
+// ====================================================>
 
 const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
@@ -45,7 +48,6 @@ export default function SingleProjectKanbanModal({
   };
 
   const handleKanbanChanges = (newData) => {
-    console.log(newData);
     setCurrentKanbanData(newData);
   };
 

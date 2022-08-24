@@ -2,6 +2,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
+// =================  IMPORT =========================>
 import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
@@ -10,7 +11,9 @@ import {
   useTheme, styled, Card, CardHeader,
 } from '@mui/material';
 import { BaseOptionChart } from './BaseOptionChart.jsx';
+// ===================================================>
 
+// .... Chart Styling .... //
 const CHART_HEIGHT = 207;
 const LEGEND_HEIGHT = 40;
 
@@ -30,6 +33,7 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
   },
 }));
 
+// .... Set Prop Types .... //
 DashboardPieChart.propTypes = {
   title: PropTypes.string,
   subheader: PropTypes.string,
@@ -43,9 +47,7 @@ export default function DashboardPieChart({
   const theme = useTheme();
 
   const chartLabels = chartData.map((i) => i.label);
-
   const chartSeries = chartData.map((i) => i.value);
-
   const chartOptions = merge(BaseOptionChart(), {
     colors: chartColors,
     labels: chartLabels,
@@ -66,6 +68,7 @@ export default function DashboardPieChart({
     },
   });
 
+  // .......... COMPONENT .......... //
   return (
     <Card {...other}>
       <CardHeader sx={{ my: 1, py: 0 }} title={title} subheader={subheader} />

@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
-import React, {
-  useRef, useState, useContext,
-} from 'react';
+
+// =================  IMPORT =========================>
+import React, { useRef, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Menu, MenuItem, IconButton, ListItemIcon, ListItemText,
@@ -11,12 +12,16 @@ import axios from 'axios';
 import Iconify from '../SupportComponents/Iconify.jsx';
 import { UserContext } from '../UserContext.jsx';
 import BACKEND_URL from '../../supportFunctions.js';
+// ===================================================>
 
 export default function UserMoreMenu({ rowContent, setJustSubmitted }) {
+  // .......... STATES ............ //
   const { user } = useContext(UserContext);
-  const navigate = useNavigate();
-  const ref = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+
+  // .......... HELPER FUNCTIONS ............ //
+  const ref = useRef(null);
+  const navigate = useNavigate();
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -30,19 +35,18 @@ export default function UserMoreMenu({ rowContent, setJustSubmitted }) {
   async function deleteCurrentProject() {
     try {
       const deletion = await axios.delete(`${BACKEND_URL}/project/${rowContent.id}`);
-      console.log(deletion);
     } catch (error) {
       console.log(error);
     }
   }
 
   const handleDeleteButtonClick = () => {
-    console.log('delete button was clicked');
     deleteCurrentProject();
     setIsOpen(false);
     setJustSubmitted(true);
   };
 
+  // .......... COMPONENT .......... //
   return (
     <>
       <IconButton ref={ref} onClick={handleOpen}>
@@ -59,8 +63,6 @@ export default function UserMoreMenu({ rowContent, setJustSubmitted }) {
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        {/* {rowContent.stage === 'in-progress' && <SingleProjectKanbanModal projectId={rowContent.id} name={rowContent.name} data={rowContent.kanbanData} setJustSubmitted={setJustSubmitted} />} */}
-
         {user.accountType === 'manager' && (
         <MenuItem
           sx={{ color: 'text.primary' }}

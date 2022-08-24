@@ -1,29 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
+// =================  IMPORT =========================>
 import React, {
   useState, useEffect, useContext,
 } from 'react';
 import axios from 'axios';
 import {
-  ButtonGroup,
-  Chip,
-  Grid,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  TextField,
-  Typography,
-  IconButton,
-  Container,
-  Box,
-  ListItemIcon,
-  ListItemText,
+  ButtonGroup, Chip, Grid, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Typography, IconButton, Container, Box, ListItemIcon, ListItemText,
 } from '@mui/material';
-
 import BACKEND_URL from '../../supportFunctions.js';
 import Iconify from '../SupportComponents/Iconify.jsx';
 import { UserContext } from '../UserContext.jsx';
@@ -31,6 +16,7 @@ import CircularIndeterminate from '../SupportComponents/CircularIndeterminate.js
 import UserMoreMenu from './UserMoreMenu.jsx';
 import HorizontalStepper from './HorizontalStepper.jsx';
 import SingleProjectKanbanModal from './KanbanBoard/SingleProjectKanbanModal.jsx';
+// ===================================================>
 
 export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
   const { user } = useContext(UserContext);

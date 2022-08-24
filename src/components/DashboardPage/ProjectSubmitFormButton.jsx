@@ -1,24 +1,23 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
+// =================  IMPORT =========================>
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import {
-  Divider,
-  Fab,
-  IconButton,
-  Tooltip,
+  Divider, Fab, IconButton, Tooltip, Button,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-
 import NewProjectHookForm from './NewProjectHookForm.jsx';
+// ===================================================>
 
 export default function ProjectSubmitFormButton({ setJustSubmitted }) {
+  // .......... STATES ............ //
   const [open, setOpen] = useState(false);
 
+  // .......... HELPER FUNCTIONS ............ //
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -27,9 +26,10 @@ export default function ProjectSubmitFormButton({ setJustSubmitted }) {
     setOpen(false);
   };
 
+  // .......... COMPONENT .......... //
+
   return (
     <div>
-
       <Tooltip title="Start A New Project">
         <Fab
           component="div"

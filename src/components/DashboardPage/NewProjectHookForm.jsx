@@ -1,45 +1,40 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-props-no-spreading */
+// =================  IMPORT =========================>
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useForm, Controller } from 'react-hook-form';
 import {
-  Autocomplete,
-  Box,
-  Button,
-  Grid,
-  TextField,
-  Slider,
-  Typography,
-  Select,
-  MenuItem,
-  styled,
+  Autocomplete, Box, Button, Grid, TextField, Slider, Typography, Select, MenuItem, styled,
 } from '@mui/material';
-
 import MuiInput from '@mui/material/Input';
-
 import CodeIcon from '@mui/icons-material/Code';
-
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { useNavigate } from 'react-router-dom';
 import BACKEND_URL from '../../supportFunctions.js';
+// ===================================================>
 
 const Input = styled(MuiInput)`
   width: 42px;
 `;
 
 export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
+  // ..... REACT HOOK FORM ....... //
   const { control, handleSubmit } = useForm({
     reValidateMode: 'onBlur',
   });
 
+  // .......... STATES ............ //
   const [skills, setSkills] = useState([]);
   const [users, setUsers] = useState([]);
+
+  // .......... HELPER FUNCTIONS ............ //
 
   const navigate = useNavigate();
 
@@ -49,7 +44,6 @@ export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
       const { data } = results;
       const skillsArray = [];
       data.forEach((skill) => skillsArray.push(skill));
-      console.log(skillsArray);
       setSkills(skillsArray);
     } catch (error) {
       console.log(error);
@@ -65,7 +59,6 @@ export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
           currentArray.push(user);
         }
       });
-      console.log(currentArray);
       setUsers(currentArray);
     } catch (error) {
       console.log(error);
@@ -78,22 +71,17 @@ export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
   }, []);
 
   async function handleOnSubmit(event) {
-    console.log('printing form control... ');
-    console.log(event);
-    console.log(typeof (event));
     try {
       const postedProject = await axios.post(`${BACKEND_URL}/project`, event);
-      console.log(postedProject);
-
       setJustSubmitted(true);
       setOpen(false);
-
       navigate('/dashboard');
     } catch (error) {
       console.log(error);
     }
   }
 
+  // .......... COMPONENT .......... //
   return (
     <Box component="form" onSubmit={handleSubmit(handleOnSubmit)}>
       <Grid container spacing={3}>

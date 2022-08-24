@@ -1,22 +1,13 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
+
+// =================  IMPORT =========================>
 import React, { useState } from 'react';
 import {
-  Box,
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TablePagination,
-  Paper,
-  Avatar,
-  Typography,
-  Tooltip,
-  Zoom,
+  Box, Table, TableRow, TableBody, TableCell, TableContainer, TableHead, TablePagination, Paper, Avatar, Typography, Tooltip, Zoom,
 } from '@mui/material';
 import SingleProjectModal from './SingleProjectModal.jsx';
+// ===================================================>
 
 // .... Setting Chart Headers .... //
 const TABLE_HEAD = [
@@ -28,6 +19,11 @@ const TABLE_HEAD = [
   { id: 'viewProfile', label: '', minWidth: 0 },
 ];
 
+/**
+ * @desc to convert date to desired formate
+ * @param {string} date in ISO xs:dateTime format
+ * @returns date in DDD, DD MMMM YYYY format
+ */
 const convertToDate = (date) => {
   const event = new Date(date);
   const dateOptions = {
@@ -39,13 +35,14 @@ const convertToDate = (date) => {
 export default function DashboardTable({
   type, data, setJustSubmitted, user,
 }) {
+  // .......... STATES ............ //
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
+  // .......... HELPER FUNCTIONS ............ //
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
-
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
@@ -53,6 +50,7 @@ export default function DashboardTable({
 
   let newData = [...data];
 
+  // change data format depending on user
   if (type === 'completed' || type === 'current') {
     if (user.accountType === 'manager') {
       newData = [...data];
@@ -62,6 +60,11 @@ export default function DashboardTable({
     }
   }
 
+  /**
+ * @desc return icon depending on stage of project
+ * @param {string} stage stage that project is in
+ * @returns icon source file
+ */
   const getIconSrc = (stage) => {
     const allIcons = [{
       name: 'contracting', src: 'https://cdn-icons-png.flaticon.com/512/2666/2666501.png',
@@ -86,6 +89,7 @@ export default function DashboardTable({
     return icon.src;
   };
 
+  // .......... COMPONENT .......... //
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 520 }}>

@@ -1,6 +1,8 @@
+// =================  IMPORT =========================>
 import { alpha, useTheme } from '@mui/material/styles';
 import { GlobalStyles } from '@mui/material';
 import React from 'react';
+// ====================================================>
 
 export default function BaseOptionChartStyle() {
   const theme = useTheme();

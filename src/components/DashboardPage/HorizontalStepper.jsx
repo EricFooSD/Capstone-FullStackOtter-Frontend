@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
+// =================  IMPORT =========================>
 import React, { useState, useContext } from 'react';
 import {
   Box, Stepper, Step, StepLabel, Button,
@@ -8,13 +10,17 @@ import {
 import axios from 'axios';
 import { UserContext } from '../UserContext.jsx';
 import BACKEND_URL from '../../supportFunctions.js';
+// ===================================================>
 
+// .... Define steps in ladder .... //
 const steps = ['contracting', 'sourcing', 'in-progress', 'client-review', 'payment-pending', 'completed'];
 
 export default function HorizontalStepper({ stage, projectId, setJustSubmitted }) {
+  // .......... STATES ............ //
   const { user } = useContext(UserContext);
   const [activeStep, setActiveStep] = useState((steps.indexOf(stage)));
 
+  // .......... HELPER FUNCTIONS ............ //
   async function confirmStageChange() {
     try {
       const newStage = steps[activeStep];
@@ -22,9 +28,7 @@ export default function HorizontalStepper({ stage, projectId, setJustSubmitted }
         projectId,
         newStage,
       };
-      console.log(currentProjectStageChange);
       const updatedProject = await axios.put(`${BACKEND_URL}/project/${projectId}`, currentProjectStageChange);
-      console.log(updatedProject);
     } catch (error) {
       console.log(error);
     }
@@ -32,20 +36,14 @@ export default function HorizontalStepper({ stage, projectId, setJustSubmitted }
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    console.log(projectId);
-    console.log(steps[activeStep]);
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    console.log(projectId);
-    console.log(steps[activeStep]);
   };
 
   const handleReset = () => {
     setActiveStep(0);
-    console.log(projectId);
-    console.log(steps[activeStep]);
   };
 
   const handleSubmit = (event) => {
@@ -54,6 +52,7 @@ export default function HorizontalStepper({ stage, projectId, setJustSubmitted }
     setJustSubmitted(true);
   };
 
+  // .......... COMPONENT .......... //
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep} alternativeLabel>
