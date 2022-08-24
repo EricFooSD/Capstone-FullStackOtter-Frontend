@@ -81,7 +81,7 @@ export default function NewProjectHookForm({ setOpen, setJustSubmitted }) {
     }
   }
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Box component="form" onSubmit={handleSubmit(handleOnSubmit)}>
       <Grid container spacing={3}>

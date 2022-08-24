@@ -19,6 +19,7 @@ import SingleProjectKanbanModal from './KanbanBoard/SingleProjectKanbanModal.jsx
 // ===================================================>
 
 export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
+  // .......... STATES ............ //
   const { user } = useContext(UserContext);
   const [open, setOpen] = useState(false);
   const [scroll] = useState('paper');
@@ -28,6 +29,8 @@ export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
 
   const [usersList, setUsersList] = useState([]);
   const [skillsList, setSkillsList] = useState([]);
+
+  // .......... HELPER FUNCTIONS ............ //
 
   const checkIfUserIsAlreadyEnrolledHere = () => {
     if (usersList.some((name) => name === user.name)) {
@@ -88,12 +91,10 @@ export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
     try {
       const results = await axios.get(`${BACKEND_URL}/project/${rowContent.id}`);
       const { data } = results;
-      console.log(data);
       const usersArray = [];
       const skillsArray = [];
       data.skills.forEach((skillObject) => skillsArray.push(skillObject.skill.name));
       data.users.forEach((userObject) => usersArray.push(userObject.user.name));
-      console.log(usersArray);
       if (rowContent.stage === 'sourcing' && !checkDateValid() && !checkIfProjectFull() && user.accountType === 'engineer' && !(usersArray.some((name) => name === user.name))) {
         setShowJoinButton(true);
       } else {
@@ -118,6 +119,7 @@ export default function SingleProjectModal({ rowContent, setJustSubmitted }) {
     setOpen(false);
   };
 
+  // .......... RENDERING COMPONENT .......... //
   return (
     <>
       <IconButton onClick={handleClickOpen()}>

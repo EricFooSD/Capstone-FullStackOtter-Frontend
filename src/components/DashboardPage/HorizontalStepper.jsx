@@ -52,7 +52,7 @@ export default function HorizontalStepper({ stage, projectId, setJustSubmitted }
     setJustSubmitted(true);
   };
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep} alternativeLabel>

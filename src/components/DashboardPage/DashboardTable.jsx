@@ -89,7 +89,7 @@ export default function DashboardTable({
     return icon.src;
   };
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 520 }}>

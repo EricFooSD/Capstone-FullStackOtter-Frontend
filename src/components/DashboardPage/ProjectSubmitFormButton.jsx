@@ -26,7 +26,7 @@ export default function ProjectSubmitFormButton({ setJustSubmitted }) {
     setOpen(false);
   };
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
 
   return (
     <div>

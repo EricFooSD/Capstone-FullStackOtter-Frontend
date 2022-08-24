@@ -36,7 +36,7 @@ DashboardWidgetSummary.propTypes = {
 export default function DashboardWidgetSummary({
   title, total, icon, color = 'primary', sx, ...other
 }) {
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Card
       sx={{

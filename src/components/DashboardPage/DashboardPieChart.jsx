@@ -68,7 +68,7 @@ export default function DashboardPieChart({
     },
   });
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <Card {...other}>
       <CardHeader sx={{ my: 1, py: 0 }} title={title} subheader={subheader} />

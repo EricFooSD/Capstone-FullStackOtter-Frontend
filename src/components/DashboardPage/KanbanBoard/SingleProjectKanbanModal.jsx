@@ -51,8 +51,7 @@ export default function SingleProjectKanbanModal({
     setCurrentKanbanData(newData);
   };
 
-  // .......... COMPONENT .......... //
-
+  // .......... RENDERING COMPONENT .......... //
   return (
     <div>
       <Button color="success" onClick={handleClickOpen}>

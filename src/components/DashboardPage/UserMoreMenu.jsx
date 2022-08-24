@@ -46,7 +46,7 @@ export default function UserMoreMenu({ rowContent, setJustSubmitted }) {
     setJustSubmitted(true);
   };
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <>
       <IconButton ref={ref} onClick={handleOpen}>
