@@ -1,17 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { forwardRef, useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
 import {
-  Button, ListItemIcon, ListItemText, Tooltip,
+  Button, ListItemIcon, ListItemText, Tooltip, Dialog, Divider, AppBar, Toolbar, IconButton, Typography, Slide,
 } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import Board from 'react-trello';
 import axios from 'axios';
 import Iconify from '../../SupportComponents/Iconify.jsx';
@@ -22,19 +17,18 @@ const Transition = forwardRef((props, ref) => <Slide direction="up" ref={ref} {.
 export default function SingleProjectKanbanModal({
   projectId, name, data, setJustSubmitted,
 }) {
+  // .......... STATES ............ //
   const [open, setOpen] = useState(false);
   const [currentKanbanData, setCurrentKanbanData] = useState(data);
 
+  // .......... HELPER FUNCTIONS ............ //
   async function updateKanban() {
     try {
       const currentKanbanDataObject = {
         id: projectId,
         kanbanData: currentKanbanData,
       };
-      console.log(currentKanbanDataObject);
-
       const updatedKanbanQuery = await axios.put(`${BACKEND_URL}/project/update-kanban/${projectId}`, currentKanbanDataObject);
-      console.log(updatedKanbanQuery);
     } catch (error) {
       console.log(error);
     }
@@ -54,6 +48,8 @@ export default function SingleProjectKanbanModal({
     console.log(newData);
     setCurrentKanbanData(newData);
   };
+
+  // .......... COMPONENT .......... //
 
   return (
     <div>
@@ -90,13 +86,10 @@ export default function SingleProjectKanbanModal({
               {' '}
               Kanban
             </Typography>
-
           </Toolbar>
           <Divider />
-          {/* {JSON.stringify(row.kanbanData)} */}
-          <Board data={data} editable onDataChange={handleKanbanChanges} />
+          <Board style={{ backgroundColor: '#4E9258' }} data={data} editable onDataChange={handleKanbanChanges} />
         </AppBar>
-
       </Dialog>
     </div>
   );
