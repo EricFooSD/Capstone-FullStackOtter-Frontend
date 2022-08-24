@@ -42,6 +42,7 @@ export default function ProfileModalForSearch({ user }) {
     color: 'secondary',
   };
 
+  // .......... RENDERING COMPONENT .......... //
   return (
     <>
       <IconButton onClick={handleClickOpen()}>
