@@ -1,21 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
-// import * as React from 'react';
+// =================  IMPORT =========================>
 import React, {
   useState, useEffect, useContext, forwardRef,
 } from 'react';
-
 import {
-  Grid,
-  Box,
-  Typography,
-  Container,
-  Divider,
-  Snackbar,
+  Grid, Box, Typography, Container, Divider, Snackbar,
 } from '@mui/material';
-
 import MuiAlert from '@mui/material/Alert';
-
 import axios from 'axios';
 import BACKEND_URL from '../supportFunctions.js';
 import { UserContext } from '../components/UserContext.jsx';
@@ -25,10 +17,16 @@ import DashboardTable from '../components/DashboardPage/DashboardTable.jsx';
 import DashboardWidgetSummary from '../components/DashboardPage/DashboardWidgetSummary.jsx';
 import DashboardPieChart from '../components/DashboardPage/DashboardPieChart.jsx';
 import DashboardBarChart from '../components/DashboardPage/DashboardBarChart.jsx';
+// ===================================================>
 
 // .......... HELPER FUNCTIONS .................
+
+/**
+ * @desc to do tally of requested skill
+ * @param {array} data array of projects
+ * @returns tally of skill and count
+ */
 const getSkillsData = (data) => {
-  // tally skills count from projects
   const skillsDataTally = {};
   data.forEach((project) => {
     project.skills.forEach((skill) => {
@@ -41,6 +39,11 @@ const getSkillsData = (data) => {
   return skillsDataTally;
 };
 
+/**
+ * @desc to do tally of type of projects of user
+ * @param {array} data array of projects
+ * @returns tally projects and count
+ */
 const getProjectsData = (userType, data) => {
   // tally skills count from projects
   const projectDataTally = {};
@@ -55,6 +58,11 @@ const getProjectsData = (userType, data) => {
   return projectDataTally;
 };
 
+/**
+ * @desc convert a tally in object format to an array of objects for population in chart
+ * @param {object} dataTally tally
+ * @returns an array of objects
+ */
 const configureDataForChart = (dataTally) => {
   const chartData = [];
   Object.keys(dataTally).forEach((key) => chartData.push({
@@ -66,34 +74,52 @@ const configureDataForChart = (dataTally) => {
 
 export default function Dashboard() {
   // .......... STATES .................
+
+  // to be used for user profile data
   const { user } = useContext(UserContext);
+
+  // to show loading states
   const [showLoading, setShowLoading] = useState(false);
   const [justSubmitted, setJustSubmitted] = useState(false);
+
+  // to populate current projects table
   const [currentProjects, setCurrentProjects] = useState([]);
+
+  // to populate open projects table
   const [openProjects, setOpenProjects] = useState([]);
+
+  // to populate completed projects table
   const [completedProjects, setCompletedProjects] = useState([]);
+
+  // to populate required skills bar chart
   const [skillsData, setSkillsData] = useState([]);
+
+  // to populate projects pie chart
   const [projectsChartData, setProjectsChartData] = useState([]);
 
+  // for alert snack bar
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
+  // .......... HELPER FUNCTIONS ............ //
   const Alert = forwardRef((props, ref) => <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />);
 
   const handleSnackBarClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-
     setSnackbarOpen(false);
   };
+
+  // query to DB when user is Engineer
   async function getCurrentProjects() {
     try {
       const results = await axios.get(`${BACKEND_URL}/projects/current/${user.id}`);
       const { data } = results;
       const currentArray = [];
       data.forEach((project) => currentArray.push(project));
-
+      // update state for current projects table
       setCurrentProjects(currentArray);
+      // update state for current projects pie chart
       setProjectsChartData(configureDataForChart(getProjectsData('NotPM', currentArray)));
       setShowLoading(false);
     } catch (error) {
@@ -101,20 +127,12 @@ export default function Dashboard() {
     }
   }
 
+  // query to DB when user is Engineer
   async function getOpenProjects() {
     try {
       const results = await axios.get(`${BACKEND_URL}/projects/open`);
       const { data } = results;
       const openArray = [];
-
-      /*
-      Available projects that the user has already enrolled in but have less than
-      the required number of engineers will be in a "Current" project for the user
-      that is also "Available". To avoid duplicate project cards,
-      we filter out projects that contain the logged in user's involvement from
-      the "Available" projects row. We use the .some method to achieve this.
-      https://stackoverflow.com/questions/8217419/how-to-determine-if-javascript-array-contains-an-object-with-an-attribute-that-e
-       */
 
       data.forEach((project) => {
         if (project.user_projects.some((userInProject) => userInProject.userId === user.id)) {
@@ -123,21 +141,24 @@ export default function Dashboard() {
           openArray.push(project);
         }
       });
-
+      // update state for open projects table
       setOpenProjects(openArray);
+      // update state for requested skills bar chart
       setSkillsData(configureDataForChart(getSkillsData(openArray)));
       setShowLoading(false);
     } catch (error) {
       console.log(error);
     }
   }
+
+  // query to DB when user is Engineer
   async function getUserCompletedProjects() {
     try {
       const results = await axios.get(`${BACKEND_URL}/projects/completed/${user.id}`);
       const { data } = results;
       const completedArray = [];
       data.forEach((project) => completedArray.push(project));
-
+      // update state for completed projects table
       setCompletedProjects(completedArray);
       setShowLoading(false);
     } catch (error) {
@@ -145,8 +166,8 @@ export default function Dashboard() {
     }
   }
 
+  // query to DB when user is Project Manager
   async function getAllProjects() {
-    // consider filtering from backend and returning 3 arrays instead
     try {
       const results = await axios.get(`${BACKEND_URL}/projects`);
       const { data } = results;
@@ -165,12 +186,14 @@ export default function Dashboard() {
         }
       });
 
+      // update state for tables
       setCurrentProjects(currentArray);
       setOpenProjects(openArray);
       setCompletedProjects(completedArray);
+
+      // update state for charts
       setSkillsData(configureDataForChart(getSkillsData(openArray)));
       setProjectsChartData(configureDataForChart(getProjectsData('PM', currentArray)));
-
       setShowLoading(false);
     } catch (error) {
       console.log(error);
@@ -197,9 +220,7 @@ export default function Dashboard() {
     }
   }, [justSubmitted]);
 
-  console.log('currentProjects', currentProjects);
-  console.log('openProjects', openProjects);
-  console.log('completedProjects', completedProjects);
+  // .......... COMPONENT .......... //
 
   if (user.length === 0) {
     return (
@@ -240,6 +261,7 @@ export default function Dashboard() {
         <Container sx={{ py: 2 }} maxWidth="lg">
           <Grid container spacing={1}>
 
+            {/* Your Projects Pie Chart */}
             <Grid item xs={12} sm={4} md={4}>
               <DashboardPieChart
                 title="Your Projects"
@@ -247,10 +269,12 @@ export default function Dashboard() {
               />
             </Grid>
 
+            {/* Available Projects Icon */}
             <Grid item xs={12} sm={4} md={4}>
               <DashboardWidgetSummary title="Available Projects" total={openProjects.length} color="yellow" icon="line-md:text-box-multiple-twotone" sx={{ mx: 3 }} />
             </Grid>
 
+            {/* Requested Skills Bar Chart */}
             <Grid item xs={12} sm={4} md={4}>
               <DashboardBarChart
                 title="Requested Skills"
@@ -261,6 +285,7 @@ export default function Dashboard() {
           </Grid>
         </Container>
 
+        {/* Current Projects Table */}
         <Container sx={{ py: 2 }} maxWidth="lg">
           <Typography variant="h5">
             Current
@@ -275,6 +300,7 @@ export default function Dashboard() {
           )}
         </Container>
 
+        {/* All Available Projects Table */}
         <Container sx={{ py: 2 }} maxWidth="lg">
           <Typography variant="h5">
             Available
@@ -289,6 +315,7 @@ export default function Dashboard() {
           )}
         </Container>
 
+        {/* Completed Projects Table */}
         <Container sx={{ py: 2 }} maxWidth="lg">
           <Typography variant="h5">
             Completed
@@ -302,6 +329,8 @@ export default function Dashboard() {
             </Grid>
           )}
         </Container>
+
+        {/* Alert & Snackbar */}
         <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleSnackBarClose}>
           <Alert onClose={handleSnackBarClose} severity="success" sx={{ width: '100%' }}>
             Dashboard refreshing!
