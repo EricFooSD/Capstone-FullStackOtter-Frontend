@@ -1,26 +1,20 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-props-no-spreading */
+
+// =================  IMPORT =========================>
 import React, { useState, useContext, forwardRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Snackbar from '@mui/material/Snackbar';
+import {
+  Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Paper, Box, Grid, Typography, Container, Snackbar,
+} from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import { UserContext } from '../components/UserContext.jsx';
 import BACKEND_URL from '../supportFunctions.js';
 import Iconify from '../components/SupportComponents/Iconify.jsx';
+// ===================================================>
 
 const cookies = new Cookies();
 
@@ -33,6 +27,8 @@ export default function Login() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   // .......... HELPER FUNCTIONS .................
+
+  // handling alert snackbar
   const Alert = forwardRef((props, ref) => <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />);
 
   const handleSnackbarClose = (event, reason) => {
