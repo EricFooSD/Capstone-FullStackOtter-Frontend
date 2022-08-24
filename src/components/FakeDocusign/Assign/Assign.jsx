@@ -41,7 +41,7 @@ const Assign = () => {
     }
   };
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <div>
       <Box padding={3}>

@@ -25,6 +25,7 @@ function Welcome() {
     dispatch(resetDocToSign());
   }, [dispatch]);
 
+  // .......... RENDERING COMPONENT .......... //
   return (
     <>
       <Container>

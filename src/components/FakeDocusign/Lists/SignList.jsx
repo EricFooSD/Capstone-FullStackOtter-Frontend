@@ -39,7 +39,7 @@ const SignList = () => {
     }
   }, [user]);
 
-  // .......... COMPONENT .......... //
+  // .......... RENDERING COMPONENT .......... //
   return (
     <div>
       {show ? (

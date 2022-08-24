@@ -117,6 +117,7 @@ const SignDocument = () => {
     navigate('/fakeDocusign');
   };
 
+  // .......... RENDERING COMPONENT .......... //
   return (
     <div className="prepareDocument">
       <Box display="flex" direction="row" flex="grow">

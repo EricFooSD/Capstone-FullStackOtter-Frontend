@@ -312,6 +312,7 @@ const PrepareDocument = () => {
     e.preventDefault();
   };
 
+  // .......... RENDERING COMPONENT .......... //
   return (
     <div className="prepareDocument">
       <Box display="flex" direction="row" flex="grow">
