@@ -203,7 +203,6 @@ export default function Dashboard() {
   useEffect(() => {
     setShowLoading(true);
     if (user.accountType === 'manager') {
-      console.log(user);
       setTimeout(getAllProjects,
         1500);
       setJustSubmitted(false);
