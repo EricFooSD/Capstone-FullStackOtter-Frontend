@@ -1,32 +1,24 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable max-len */
+
+// =================  IMPORT =========================>
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import {
-  Box,
-  Button,
-  Grid,
-  TextField,
-  Typography,
-  Select,
-  MenuItem,
-  Slider,
-  Autocomplete,
-  Container,
-  InputLabel,
-  FormControl,
+  Box, Button, Grid, TextField, Typography, Select, MenuItem, Slider, Autocomplete, Container, InputLabel, FormControl,
 } from '@mui/material';
 import BACKEND_URL from '../supportFunctions.js';
 import { UserContext } from '../components/UserContext.jsx';
+// ===================================================>
 
 export default function ProfileEdit() {
   // getting user data from useContext in UserContext
   const { user } = useContext(UserContext);
-  console.log('user', user);
 
   // .............STATES...............
   const [skills, setSkills] = useState([]);
@@ -40,7 +32,6 @@ export default function ProfileEdit() {
     try {
       const results = await axios.get(`${BACKEND_URL}/skills`);
       const { data } = results;
-      console.log(data);
       setSkills(data);
     } catch (error) {
       console.log(error);
@@ -52,11 +43,8 @@ export default function ProfileEdit() {
 
   // function to run when submitting form
   async function handleOnSubmit(event) {
-    console.log('updating user data');
-    console.log(event);
     try {
       const updateUserData = await axios.post(`${BACKEND_URL}/users/edit/${user.id}`, event);
-      console.log(updateUserData);
       // redirect to profile page
       navigate('../profile', { replace: true });
       window.location.reload();
@@ -82,13 +70,12 @@ export default function ProfileEdit() {
     useEffect(() => { getSkills(); }, []);
 
     const userSkills = [];
-
     user.skills.forEach((element) => {
       const skillToAdd = skills.find((x) => x.id === element.id);
-      console.log('skillToAdd', skillToAdd);
       userSkills.push(skillToAdd);
     });
-    console.log('userSkills', userSkills);
+
+    // .......... RENDERING COMPONENT .......... //
 
     return (
       <Container maxWidth="md">
