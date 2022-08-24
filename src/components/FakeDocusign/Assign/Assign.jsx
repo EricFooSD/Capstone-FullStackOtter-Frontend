@@ -1,24 +1,23 @@
 /* eslint-disable no-shadow */
+
+// =================  IMPORT =========================>
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  TextField,
-  Table,
-  Text,
-  Toast,
+  Box, Button, Container, Heading, TextField, Table, Text, Toast,
 } from 'gestalt';
 import 'gestalt/dist/gestalt.css';
 import { addSignee, selectAssignees } from './AssignSlice.js';
+// ===================================================>
 
 const Assign = () => {
+  // .......... STATES ............ //
   const [email, setEmail] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [showToast, setShowToast] = useState(false);
+
+  // .......... HELPER FUNCTIONS ............ //
   const assignees = useSelector(selectAssignees);
   const dispatch = useDispatch();
 
@@ -42,6 +41,7 @@ const Assign = () => {
     }
   };
 
+  // .......... COMPONENT .......... //
   return (
     <div>
       <Box padding={3}>

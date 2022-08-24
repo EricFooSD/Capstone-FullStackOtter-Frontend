@@ -1,3 +1,4 @@
+// =================  IMPORT =========================>
 import React, { useContext, useEffect, useState } from 'react';
 import {
   Button, Table, Text, Spinner,
@@ -8,17 +9,18 @@ import { useNavigate } from 'react-router-dom';
 import { searchForDocumentsSigned } from '../../../firebase/firebase.js';
 import { setDocToView } from '../ViewDocument/ViewDocumentSlice.js';
 import { UserContext } from '../../UserContext.jsx';
+// ===================================================>
 
 const SignedList = () => {
-  const dispatch = useDispatch();
+  // .......... STATES ............ //
 
-  const navigate = useNavigate();
   const [docs, setDocs] = useState([]);
   const [show, setShow] = useState(true);
   const { user } = useContext(UserContext);
-  console.log('signedList email:');
-  console.log(user.email);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  // .......... HELPER FUNCTIONS ............ //
   async function getDocs() {
     try {
       const docsToView = await searchForDocumentsSigned(user.email);

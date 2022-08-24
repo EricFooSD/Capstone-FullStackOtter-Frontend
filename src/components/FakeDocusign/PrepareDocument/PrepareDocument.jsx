@@ -5,19 +5,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
+// =================  IMPORT =========================>
 import React, {
   useContext, useRef, useEffect, useState,
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  Box,
-  Column,
-  Heading,
-  Stack,
-  Text,
-  Button,
-  SelectList,
+  Box, Column, Heading, Stack, Text, Button, SelectList,
 } from 'gestalt';
 import WebViewer from '@pdftron/webviewer';
 import { selectAssignees, resetSignee } from '../Assign/AssignSlice.js';
@@ -25,8 +20,10 @@ import { storage, addDocumentToSign } from '../../../firebase/firebase.js';
 import 'gestalt/dist/gestalt.css';
 import './PrepareDocument.css';
 import { UserContext } from '../../UserContext.jsx';
+// ===================================================>
 
 const PrepareDocument = () => {
+  // .......... STATES ............ //
   const [instance, setInstance] = useState(null);
   const [dropPoint, setDropPoint] = useState(null);
   const { user } = useContext(UserContext);
@@ -35,7 +32,6 @@ const PrepareDocument = () => {
   const navigate = useNavigate();
 
   const assignees = useSelector(selectAssignees);
-  // eslint-disable-next-line max-len
   const assigneesValues = assignees.map((userkey) => ({ value: userkey.email, label: userkey.name }));
   const initialAssignee = assigneesValues.length > 0 ? assigneesValues[0].value : '';
   const [assignee, setAssignee] = useState(initialAssignee);

@@ -1,3 +1,4 @@
+// =================  IMPORT =========================>
 import React, { useEffect, useState, useContext } from 'react';
 import {
   Button, Table, Text, Spinner,
@@ -8,15 +9,19 @@ import { useNavigate } from 'react-router-dom';
 import { searchForDocumentToSign } from '../../../firebase/firebase.js';
 import { setDocToSign } from '../SignDocument/SignDocumentSlice.js';
 import { UserContext } from '../../UserContext.jsx';
+// ===================================================>
 
 const SignList = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // .......... STATES ............ //
+
   const { user } = useContext(UserContext);
-  console.log('signList email:');
-  console.log(user.email);
   const [docs, setDocs] = useState([]);
   const [show, setShow] = useState(true);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // .......... HELPER FUNCTIONS ............ //
 
   async function getDocs() {
     try {
@@ -32,9 +37,9 @@ const SignList = () => {
     if (user.email !== null) {
       setTimeout(getDocs, 1000);
     }
-  // }, []);
   }, [user]);
 
+  // .......... COMPONENT .......... //
   return (
     <div>
       {show ? (

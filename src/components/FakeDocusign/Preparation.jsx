@@ -1,10 +1,8 @@
+// =================  IMPORT =========================>
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import PrepareDocument from './PrepareDocument/PrepareDocument.jsx';
+// ===================================================>
 
 const Preparation = () => (
   <div>

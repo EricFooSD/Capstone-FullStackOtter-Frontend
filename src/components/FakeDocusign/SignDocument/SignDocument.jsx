@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 
+// =================  IMPORT =========================>
 import React, {
   useRef, useEffect, useState, useContext,
 } from 'react';
@@ -9,14 +10,15 @@ import {
   Box, Column, Heading, Button,
 } from 'gestalt';
 import WebViewer from '@pdftron/webviewer';
-import { typeOf } from 'mathjs';
 import { selectDocToSign } from './SignDocumentSlice.js';
 import { storage, updateDocumentToSign } from '../../../firebase/firebase.js';
 import 'gestalt/dist/gestalt.css';
 import './SignDocument.css';
 import { UserContext } from '../../UserContext.jsx';
+// ===================================================>
 
 const SignDocument = () => {
+  // .......... STATES ............ //
   const { user } = useContext(UserContext);
   const [annotationManager, setAnnotatManager] = useState([]);
   const [annotPosition, setAnnotPosition] = useState(0);
@@ -25,8 +27,6 @@ const SignDocument = () => {
 
   const { docRef, docId } = doc;
   const { email } = user;
-
-  console.log(email, docRef, docId);
 
   const viewer = useRef(null);
   const navigate = useNavigate();
@@ -51,12 +51,7 @@ const SignDocument = () => {
       },
       viewer.current,
     ).then(async (instance) => {
-      console.log(instance);
       const { docViewer, annotManager, Annotations } = instance;
-
-      console.log(annotManager);
-      console.log(typeOf(annotManager));
-
       setAnnotatManager(...annotationManager, annotManager);
 
       // select only the insert group
@@ -79,10 +74,6 @@ const SignDocument = () => {
           };
         }
       };
-
-      console.log('annotationManager:');
-      console.log(annotManager);
-
       annotManager.on('annotationChanged', (annotations, action, { imported }) => {
         if (imported && action === 'add') {
           annotations.forEach((annot) => {
@@ -122,7 +113,6 @@ const SignDocument = () => {
 
   const completeSigning = async () => {
     const xfdf = await annotationManager.exportAnnotations({ widgets: false, links: false });
-    console.log(xfdf);
     await updateDocumentToSign(docId, email, xfdf);
     navigate('/fakeDocusign');
   };

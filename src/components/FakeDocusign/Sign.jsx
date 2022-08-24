@@ -1,10 +1,8 @@
+// =================  IMPORT =========================>
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import SignDocument from './SignDocument/SignDocument.jsx';
+// ===================================================>
 
 const Sign = () => (
   <div>

@@ -1,10 +1,8 @@
+// =================  IMPORT =========================>
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import ViewDocument from './ViewDocument/ViewDocument.jsx';
+// ===================================================>
 
 const View = () => (
   <div>
