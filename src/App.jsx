@@ -1,3 +1,4 @@
+// =================  IMPORT =========================>
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,17 +15,18 @@ import Profile from './pages/Profile.jsx';
 import ProfileEdit from './pages/ProfileEdit.jsx';
 import { UserContext } from './components/UserContext.jsx';
 import BACKEND_URL from './supportFunctions.js';
-
 import AssignUsers from './components/FakeDocusign/AssignUsers.jsx';
 import Preparation from './components/FakeDocusign/Preparation.jsx';
 import Sign from './components/FakeDocusign/Sign.jsx';
 import View from './components/FakeDocusign/View.jsx';
 import Welcome from './components/FakeDocusign/Welcome.jsx';
 import ResponsiveAppBar from './components/Navbar/ResponsiveAppBar.jsx';
+// ===================================================>
 
 // make sure that axios always sends the cookies to the backend server
 axios.defaults.withCredentials = true;
 
+// =========  STYLING THEME ============ //
 function pxToRem(value) {
   return `${value / 16}rem`;
 }
@@ -165,6 +167,8 @@ const theme = createTheme({
   },
 });
 
+// ===================================== //
+
 export default function App() {
   // .............STATES...............
   const [user, setUser] = useState([]);
@@ -176,7 +180,6 @@ export default function App() {
       const { data } = results;
       setUser(data);
     } catch (error) {
-      console.log('not logged in. Try again.');
       console.log(error);
     }
   }
