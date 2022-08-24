@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
-import {
-  Link,
-  useNavigate,
-} from 'react-router-dom';
+
+// =================  IMPORT =========================>
+import { Link, useNavigate } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import Cookies from 'universal-cookie';
 import React, { useContext, useState } from 'react';
@@ -11,11 +10,12 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { UserContext } from '../UserContext.jsx';
+// ===================================================>
 
 // to handle cookies for logout function
 const cookies = new Cookies();
 
-// styling Navbar
+// ........ STYLING ........ //
 const headerNav = {
   textAlign: 'center',
   color: 'primary.main',
