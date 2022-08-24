@@ -1,12 +1,12 @@
+// =================  IMPORT =========================>
 import * as React from 'react';
 import {
-  styled,
-  Box,
-  ButtonBase,
-  Container,
+  styled, Box, ButtonBase, Container,
 } from '@mui/material';
 import Typography from './Typography.jsx';
+// ===================================================>
 
+// ........ STYLING ........ //
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
   left: 0,
@@ -18,6 +18,7 @@ const ImageBackdrop = styled('div')(({ theme }) => ({
   transition: theme.transitions.create('opacity'),
 }));
 
+// ........ STYLING ........ //
 const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
   display: 'block',

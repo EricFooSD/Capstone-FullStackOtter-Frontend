@@ -1,13 +1,12 @@
 /* eslint-disable react/require-default-props */
+// =================  IMPORT =========================>
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {
-  styled,
-  Container,
-  Box,
-} from '@mui/material';
+import { styled, Container, Box } from '@mui/material';
 import ProductHeroArrowdown from './HomeAssets/productHeroArrowDown.png';
+// ===================================================>
 
+// ........ STYLING ........ //
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
   color: theme.palette.common.white,
   position: 'relative',
@@ -34,6 +33,7 @@ const Background = styled(Box)({
 function ProductHeroLayout(props) {
   const { sxBackground, children } = props;
 
+  // .......... COMPONENT .......... //
   return (
     <ProductHeroLayoutRoot>
       <Container

@@ -1,15 +1,11 @@
+// =================  IMPORT =========================>
 import * as React from 'react';
-
-import {
-  Box,
-  Grid,
-  Container,
-} from '@mui/material';
-
+import { Box, Grid, Container } from '@mui/material';
 import Typography from './Typography.jsx';
 import ProductValues1 from './HomeAssets/productValues1.svg';
 import ProductValues2 from './HomeAssets/productValues2.svg';
 import ProductValues3 from './HomeAssets/productValues3.svg';
+// ===================================================>
 
 const item = {
   display: 'flex',

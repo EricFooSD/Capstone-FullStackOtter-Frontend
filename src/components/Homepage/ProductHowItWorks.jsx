@@ -1,17 +1,15 @@
+// =================  IMPORT =========================>
 import React, { useContext } from 'react';
-
-import {
-  Box,
-  Grid,
-  Container,
-} from '@mui/material';
+import { Box, Grid, Container } from '@mui/material';
 import Button from './Button.jsx';
 import Typography from './Typography.jsx';
 import ProductHowItWorks1 from './HomeAssets/productHowItWorks1.svg';
 import ProductHowItWorks2 from './HomeAssets/productHowItWorks2.svg';
 import ProductHowItWorks3 from './HomeAssets/productHowItWorks3.svg';
 import { UserContext } from '../UserContext.jsx';
+// ===================================================>
 
+// ........ STYLING ........ //
 const item = {
   display: 'flex',
   flexDirection: 'column',
@@ -34,6 +32,7 @@ const image = {
 function ProductHowItWorks() {
   const { user } = useContext(UserContext);
 
+  // .......... COMPONENT .......... //
   return (
     <Box
       component="section"

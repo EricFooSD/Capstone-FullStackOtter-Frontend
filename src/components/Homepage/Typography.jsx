@@ -1,9 +1,11 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
+// =================  IMPORT =========================>
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import MuiTypography from '@mui/material/Typography';
+// ===================================================>
 
 const markClassesMapping = {
   center: {
