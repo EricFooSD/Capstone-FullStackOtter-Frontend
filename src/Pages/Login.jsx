@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 import {
-  Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Paper, Box, Grid, Typography, Container, Snackbar,
+  Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Paper, Box, Grid, Typography, Container, Snackbar, Table, TableBody, TableCell, TableHead, TableRow, Divider,
 } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import { UserContext } from '../components/UserContext.jsx';
@@ -190,6 +190,35 @@ export default function Login() {
                 >
                   Sign In
                 </Button>
+                <Box>
+                  <Divider>Test Accounts</Divider>
+                  <Table sx={{ minWidth: 300 }} size="small" aria-label="a dense table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Role</TableCell>
+                        <TableCell align="right">Username</TableCell>
+                        <TableCell align="right">Password</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Software Engineer</TableCell>
+                        <TableCell align="right">Potter</TableCell>
+                        <TableCell align="right">abc123</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Project / Product Manager</TableCell>
+                        <TableCell align="right">Dumbledore</TableCell>
+                        <TableCell align="right">abc123</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Client</TableCell>
+                        <TableCell align="right">Client</TableCell>
+                        <TableCell align="right">abc123</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </Box>
                 <Copyright sx={{ mt: 5 }} />
               </Box>
             </Box>
