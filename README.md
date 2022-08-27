@@ -2,68 +2,47 @@
 
 by Eric Foo, Zack (Zheng Jie) Quah and Graham James Lim
 
-Full-Stack Otter is a software project management app designed to help programmers who already have full-time jobs side-hustle their spare time for paid, pre-qualified freelance coding jobs in their spare time.
+Full-Stack Otter is a software project job posting and management app designed to help programmers who already have full-time jobs side-hustle their spare time for paid, pre-qualified freelance coding jobs in their spare time.
+
+Deployed Site: https://fso-frontend-51e83.web.app/
+
+| Role | Username | Password  |
+| ------------- | ------------- | ---------------- |
+| Software Engineer | Potter | abc123 |
+| Product / Project Manager | Dumbledore | abc123 |
+| Client | Client | abc123 |
+
+<sub>both case sensitive</sub>
+
 
 ## Context
 
 Full-stack software engineers are always in demand by businesses, but not all business can hire a permanent full-stack team with the post-pandemic talent crunch.
+
 Yet, software engineers who are already employed often look for opportunities outside of work hours to earn a side income. This app offers project-based work to a curated list of full-stack software engineers who register on the Full-Stack Otter, in a similar vein to platforms like Toptal or Fiverr.
 
-However, the difference between this app and such platforms is that any work from clients here is managed by a project manager, end-to-end. Work pipeline is generated after an initial consulting session between the project manager and the client to not only take client requirements, but to manage expectations and timelines realistically. It is only after jobs are properly qualified by the project manager that they get posted onto the app's portal for the engineers to bid on.
+Any work from clients here is managed by a project manager, end-to-end. Work pipeline is generated after an initial consulting session between the project manager and the client to not only take client requirements, but to manage expectations and timelines realistically. It is only after jobs are properly qualified by the project manager that they get posted onto the app's portal for the engineers to bid on.
 
-Once the required number of engineers enrol in a project, the project manager kicks off development with a briefing call, before unlocking a kanban board for the engineers to use for progress to be tracked until completion and production (agile scrum). The clients do not interface with the engineers at all, which allows the engineers to focus strictly on development within their agreed parameters. At the same time, any changes in client expectations are triaged by the project manager first, before changes to project timelines or parameters are communicated to the engineers.
+Once the required number of engineers enrol in a project, the project manager kicks off development and unlock a kanban board for the engineers to use for progress to be tracked until completion and production (agile scrum).
 
-### User Flows
+## Features
 
-##### Enrol in New Project (Software Engineer)
+- User login
+- Creating Projects
+- Inbuilt project Kanban board
+- Dashboard charts
+- Edit Profile
+- Signing pdf documents
 
-```mermaid
-flowchart LR
-  A([Start])
-  B(Log in Page)
-  C{{Correct username & password?}}
-  D(Retry log in)
-  E(Home page)
-  F(View all current and past projects)
-  G(Current project)
-  H(Log Progress on Kanban board)
-  I(Post comments)
-  J([End])
+## Screenshots
 
-  A-->B
-  B-->C
-  C--F-->D
-  D-->C
-  C--T-->E
-  E-->F-->G-->H-->I-->J
-```
+![Screenshot 2022-08-28 at 1 10 21 AM](https://user-images.githubusercontent.com/86565793/187046234-46ddfc3d-8dfc-44a7-957b-668098098cfb.png)
 
-##### View Job postings, Assign to SEW, and Manage Project (PM)
+<img width="1026" alt="Screenshot 2022-08-28 at 3 51 56 AM" src="https://user-images.githubusercontent.com/86565793/187046238-3b8a0a7f-154d-4765-b95f-426a38ab9d0a.png">
+<img width="1051" alt="Screenshot 2022-08-28 at 3 52 08 AM" src="https://user-images.githubusercontent.com/86565793/187046241-a6ce8773-936f-481d-b467-161e405ebde1.png">
 
-```mermaid
-flowchart LR
-  A([Start])
-  B(Log in Page)
-  C{{Correct username & password?}}
-  D(Retry log in)
-  E(Home page)
-  F(Assign Jobs from Portal, posted by clients to SEW on Project Summary Page)
-  G(Comfortable - Post Contracts to Client in Negotiation)
-  H(Convert Project Summary to Kanban format with Contract Negotiation Success)
-  I(PM to Manage the Project Timelines and Milestones)
-  J([End])
-  A-->B
-  B-->C
-  C--F-->D
-  D-->C
-  C--T-->E
-  E-->F-->G-->H-->I-->J
-```
+<img width="1000" alt="Screenshot 2022-08-28 at 3 52 39 AM" src="https://user-images.githubusercontent.com/86565793/187046245-5bc4dc57-8754-492d-8382-7653e7e32143.png">
 
-### Wireframes
+<img width="998" alt="Screenshot 2022-08-28 at 3 53 02 AM" src="https://user-images.githubusercontent.com/86565793/187046247-7e2376b1-d5f2-43af-81d0-8ab70749adf7.png"><img width="339" alt="Screenshot 2022-08-28 at 3 54 21 AM" src="https://user-images.githubusercontent.com/86565793/187046249-57b863f2-ef22-4ab9-9ff0-2ec29d270edc.png">
 
-[View Wireframes](https://drive.google.com/file/d/1QyYC_qbJ1NE1E3jB-R2nNixHOm2jg5Ef/view?usp=sharing)
 
-### Database ERD
-
-[View ERD](https://drive.google.com/file/d/1xN8Zs8Zy1Qrxm6BlVJpsW6zamGonTRF7/view?usp=sharing)
