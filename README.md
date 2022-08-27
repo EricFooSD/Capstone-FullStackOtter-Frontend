@@ -1,4 +1,4 @@
-# Full-Stack Otter - Part-Time Software Engineering Project Management App
+# FullStackOtter - Software Project Job Posting & Management App
 
 by Eric Foo, Zack (Zheng Jie) Quah and Graham James Lim
 
