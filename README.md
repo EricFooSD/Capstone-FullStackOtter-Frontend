@@ -6,6 +6,9 @@ Full-Stack Otter is a software project job posting and management app designed t
 
 Deployed Site: https://fso-frontend-51e83.web.app/
 
+
+Test Credentials
+
 | Role | Username | Password  |
 | ------------- | ------------- | ---------------- |
 | Software Engineer | Potter | abc123 |
