@@ -4,7 +4,7 @@ by Eric Foo, Zack (Zheng Jie) Quah and Graham James Lim
 
 Full-Stack Otter is a software project job posting and management app designed to help programmers who already have full-time jobs side-hustle their spare time for paid, pre-qualified freelance coding jobs in their spare time.
 
-Deployed Site: https://fso-frontend-51e83.web.app/
+Deployed Site: 
 
 
 Test Credentials
